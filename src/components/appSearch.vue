@@ -36,7 +36,7 @@ export default{
 
 <template>
   <div class="search-wrap">
-    <input class="search-input" :value="searchValue" type="text">
+    <input class="search-input" v-model="searchValue" type="text">
     <button class="search-button">Search</button>
     <p>{{ searchValue }}</p>
   </div>
