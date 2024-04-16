@@ -1,5 +1,8 @@
 <script>
 import appSearch from './components/appSearch.vue'
+import appNavbar from './components/appNavbar.vue'
+import appMain from './components/appMain.vue'
+import appFooter from './components/appFooter.vue'
 import { store } from './store'
 import axios from 'axios'
 
@@ -25,6 +28,10 @@ export default{
   },
   components:{
     appSearch,
+    appNavbar,
+    appMain,
+    appFooter
+
   },
   mounted(){
     console.log(store);
@@ -36,7 +43,12 @@ export default{
 </script>
 
 <template>
-  <appSearch/>
+
+    <appNavbar/>
+    <appMain/>
+    <appFooter/>
+    
+
 </template>
 
 <style lang="scss">
