@@ -1,5 +1,4 @@
 <script>
-import appCard from './appCard.vue'
 export default{
   data(){
 
@@ -7,17 +6,12 @@ export default{
   methods:{
     
   },
-  components:{
-    appCard,
-  }
 
 }
 </script>
 
 <template>
-  <h1>Ciao mamma</h1>
-
-  <appCard/>
+  <h1>Ciao appCard</h1>
 
   
 </template>
