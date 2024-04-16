@@ -38,7 +38,7 @@ export default{
       <!-- <h3>{{ movieLanguage }}</h3> -->
       <img v-if="isFlag" class="flag" :src="getImgSource(movieLanguage)" alt="">
       <h3 v-else>{{ movieLanguage }}</h3>
-      <h4>{{ movieVote }}</h4>
+      <h4>{{ Math.floor(movieVote) }}</h4>
       
     </div>
   </div>
@@ -48,13 +48,31 @@ export default{
 </template>
 
 <style scoped>
-.card{
-  img{
-    &.flag{
-      width: 31px;
+.col-20{
+  /* border: 1px solid rgba(255, 255, 255, 0.32); */
+  padding: 10px;
+  .card{
+    h1{
+      font-size: 17px;
     }
+    h2{
+      font-style: italic;
+      font-size: 15px;
+    }
+    img{
+      &.flag{
+        width: 31px;
+      }
+    }
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    height: 100%;
+    /* aspect-ratio: 1/1.5; */
+    padding: 10px;
+    
+
+      & > *{
+        margin-bottom: 20px;
+      }
   }
-  border: 1px solid white;
-  height: 100%;
 }
 </style>

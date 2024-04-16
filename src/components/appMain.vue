@@ -40,5 +40,10 @@ export default{
 </template>
 
 <style lang="scss" scope>
-
+.search-results{
+  .row{
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+}
 </style>
