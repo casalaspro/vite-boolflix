@@ -18,14 +18,14 @@
 <template>
 <nav>
   <div class="container">
-    <div class="row">
-      <div class="logo"></div>
+    <div class="row navbar align-center space-between">
+      <div class="logo">Boolzapp</div>
       <ul class="menu">
-        <li>Home</li>
-        <li>Serie TV</li>
-        <li>Film Nuovi e popolari</li>
-        <li>La mia lista</li>
-        <li>Sfoglia per lingua</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Serie TV</a></li>
+        <li><a href="#">Film Nuovi e popolari</a></li>
+        <li><a href="#">La mia lista</a></li>
+        <li><a href="#">Sfoglia per lingua</a></li>
       </ul>
       <appSearch/>
     </div>
@@ -35,5 +35,16 @@
 </template>
 
 <style lang="scss" scope>
+  nav{
+    .menu{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li{
+        padding: 5px;
+        line-height: 10px;
+      }
+    }
+  }
 
 </style>

@@ -13,18 +13,7 @@ export default{
     }
   },
   methods:{
-    fetchMovies(query){
-      axios.get('https://api.themoviedb.org/3/search/movie?', {
-        params:{
-          api_key: '8c5d2929491cc6bc1823b19280c48648',
-          query: query
-        }
-      })
-      .then((response)=>{
-        console.log(response);
-        store.movies.push(response.data.results);
-      })
-    }
+    
   },
   components:{
     appSearch,
@@ -35,7 +24,6 @@ export default{
   },
   mounted(){
     console.log(store);
-    this.fetchMovies("Il signore degli");
     console.log(store.movies);
     
   }
@@ -52,6 +40,12 @@ export default{
 </template>
 
 <style lang="scss">
-@use './style/general'
+@use './style/general';
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+
+}
 
 </style>
