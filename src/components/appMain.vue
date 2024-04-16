@@ -6,7 +6,7 @@ import {store} from '../store'
 export default{
   data(){
     return{
-      dbMovies : store.movies[0],
+      store : store,
 
     }
   },
@@ -26,13 +26,11 @@ export default{
     <div class="container">
       <div class="row">
         <AppCard 
-          v-for="movie in dbMovies"
+          v-for="movie in store.movies"
           :movieTitle="movie.title"
           :movieOriginalTitle="movie.original_title"
           :movieLanguage="movie.original_language"
           :movieVote="movie.vote_average"
-
-
         />
       </div>
       <!-- v-if="dbMovies.length !== 0" -->

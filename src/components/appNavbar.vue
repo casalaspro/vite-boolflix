@@ -35,11 +35,12 @@
 </template>
 
 <style lang="scss" scope>
-@import '../style/_variables.scss';
+// @import '../style/_variables.scss';
 
   nav{
     .logo{
-      color: $company-color;
+      // color: $company-color;
+      color: red;
       font-weight: 900;
       font-size: 30px;
       letter-spacing: 3px;

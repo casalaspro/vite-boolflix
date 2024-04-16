@@ -6,13 +6,14 @@ import {store} from '../store'
 export default{
   data(){
     return{
+      store: store,
       searchValue: '',
-      movieDatabase: store.movies,
 
     }
   },
   methods:{
     fetchMovies(query){
+      this.store.movies = [];
       axios.get('https://api.themoviedb.org/3/search/movie?', {
         params:{
           api_key: '8c5d2929491cc6bc1823b19280c48648',
@@ -20,7 +21,10 @@ export default{
         }
       })
       .then((response)=>{
-        store.movies.push(response.data.results);
+        // this.store.movies.push(response.data.results);
+        for(let i= 0; i<response.data.results.length; i++){
+          this.store.movies.push(response.data.results[i]);
+        }
         console.log("response.data.results: ", response.data.results);
         console.log("Dentro store.movie[0]: ", store.movies[0]);
       })
