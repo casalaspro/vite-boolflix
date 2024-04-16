@@ -5,7 +5,7 @@ import { store } from './store'
 export default{
   data(){
     return{
-      
+
     }
   },
   methods:{
@@ -25,5 +25,6 @@ export default{
 </template>
 
 <style lang="scss">
+@use './style/general'
 
 </style>
