@@ -6,7 +6,9 @@ import {store} from '../store'
 export default{
   data(){
     return{
-  searchValue: '',
+      searchValue: '',
+      movieDatabase: store.movies,
+
     }
   },
   methods:{
@@ -18,14 +20,15 @@ export default{
         }
       })
       .then((response)=>{
-        console.log(response);
         store.movies.push(response.data.results);
+        console.log("response.data.results: ", response.data.results);
+        console.log("Dentro store.movie[0]: ", store.movies[0]);
       })
     }
     
   },
   mounted(){
-    this.fetchMovies("Il signore degli");
+    // this.fetchMovies("Il signore degli");
   },
   components:{
     
@@ -37,8 +40,8 @@ export default{
 <template>
   <div class="search-wrap">
     <input class="search-input" v-model="searchValue" type="text">
-    <button class="search-button">Search</button>
-    <p>{{ searchValue }}</p>
+    <button @click="fetchMovies(searchValue)" class="search-button">Search</button>
+    <!-- <p v-if="movieDatabase.length !== 0">{{ movieDatabase }}</p> -->
   </div>
   
 </template>

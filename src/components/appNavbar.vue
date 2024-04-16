@@ -35,7 +35,16 @@
 </template>
 
 <style lang="scss" scope>
+@import '../style/_variables.scss';
+
   nav{
+    .logo{
+      color: $company-color;
+      font-weight: 900;
+      font-size: 30px;
+      letter-spacing: 3px;
+    }
+    margin: 40px 0;
     .menu{
       display: flex;
       justify-content: center;

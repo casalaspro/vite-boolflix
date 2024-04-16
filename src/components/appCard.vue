@@ -8,6 +8,12 @@ export default{
   methods:{
     
   },
+  props:{
+    movieTitle: String,
+    movieOriginalTitle: String,
+    movieLanguage: String,
+    movieVote: Number
+  }
 
 }
 </script>
@@ -16,11 +22,11 @@ export default{
   <div class="col-20">
     <div class="card">
 
-      <h1>Titolo</h1>
-      <h2>Titolo Originale</h2>
-      <h3>Lingua</h3>
-      <h4>Voto</h4>
-      
+      <h1>{{ movieTitle }}</h1>
+      <h2>{{ movieOriginalTitle }}</h2>
+      <h3>{{ movieLanguage }}</h3>
+      <h4>{{ movieVote }}</h4>
+
     </div>
   </div>
 
@@ -31,5 +37,6 @@ export default{
 <style scoped>
 .card{
   border: 1px solid white;
+  height: 100%;
 }
 </style>
