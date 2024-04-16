@@ -2,7 +2,9 @@
 import appCard from './appCard.vue'
 export default{
   data(){
-
+    return{
+      
+    }
   },
   methods:{
     
