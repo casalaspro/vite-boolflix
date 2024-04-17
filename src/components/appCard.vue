@@ -4,6 +4,7 @@ export default{
     return{
       isFlag: true,
       posterDimension: "w154",
+      starsArray: []
     }
   },
   methods:{
@@ -49,6 +50,7 @@ export default{
       <h3 v-else>{{ movieLanguage }}</h3>
       <h4>{{ Math.floor(movieVote) }}</h4>
       <img :src="getPosterSource(posterDimension, moviePoster)" alt="" class="poster">
+      <font-awesome-icon :icon="['far', 'star']" />
       
     </div>
   </div>
