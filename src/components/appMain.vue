@@ -23,17 +23,34 @@ export default{
 <template>
 
   <section class="search-results">
-    <div class="container">
-      <div class="row">
-        <AppCard 
-          v-for="movie in store.movies"
-          :movieTitle="movie.title"
-          :movieOriginalTitle="movie.original_title"
-          :movieLanguage="movie.original_language"
-          :movieVote="movie.vote_average"
-        />
+    <div class="movies">
+      <div class="container">
+        <h1 class="movie-title">Movies</h1>
+        <div class="row">
+          <AppCard 
+            v-for="movie in store.movies"
+            :movieTitle="movie.title"
+            :movieOriginalTitle="movie.original_title"
+            :movieLanguage="movie.original_language"
+            :movieVote="movie.vote_average"
+          />
+        </div>
       </div>
-      <!-- v-if="dbMovies.length !== 0" -->
+    </div>
+
+    <div class="tv-series">
+      <div class="container">
+        <h1 class="tv-title">Tv Series</h1>
+        <div class="row">
+          <AppCard 
+            v-for="movie in store.tvSeries"
+            :movieTitle="movie.title"
+            :movieOriginalTitle="movie.original_title"
+            :movieLanguage="movie.original_language"
+            :movieVote="movie.vote_average"
+          />
+        </div>
+      </div>
     </div>
   </section>
 

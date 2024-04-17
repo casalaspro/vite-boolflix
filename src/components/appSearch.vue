@@ -37,7 +37,7 @@ export default{
       .then((response)=>{
         // this.store.movies.push(response.data.results);
         
-        const newArrayOfObj = response.data.results.map(({
+        const newNameArray = response.data.results.map(({
         name: title,
         original_name: original_title,
           ...rest
@@ -46,10 +46,11 @@ export default{
             original_title,
           ...rest
           }));
-        console.log(newArrayOfObj)
+        console.log(newNameArray)
         // for(let i= 0; i<response.data.results.length; i++){
         //   this.store.movies.push(response.data.results[i]);
         // }
+        this.store.tvSeries = newNameArray;
         console.log("response.data.results: ", response.data.results);
         // console.log("Dentro store.movie[0]: ", store.movies[0]);
       })
