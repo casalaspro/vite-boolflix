@@ -6,6 +6,10 @@ export default{
     }
   },
   methods:{
+    getPosterSource(dimensionsString, queryString){
+      const srcBase = "https://image.tmdb.org/t/p/";
+      return new URL(srcBase + dimensionsString + queryString, import.meta.url).href;
+    },
     getImgSource(string){
       const src = "../assets/";
       const englandFlag = "gbr.svg";
@@ -18,6 +22,9 @@ export default{
         this.isFlag = false
       }
     }
+  },
+  mounted(){
+    console.log("Test Immagine: ", this.getPosterSource("w92", "/vCTk3LfY2Ux7IngTTUSxejLcSJW.jpg"));
   },
   props:{
     movieTitle: String,
@@ -76,3 +83,10 @@ export default{
   }
 }
 </style>
+
+<!-- 
+  POSTER SIZES
+
+  "w92", "w154", "w185", "w342", "w500", "w780", "original" 
+
+-->
