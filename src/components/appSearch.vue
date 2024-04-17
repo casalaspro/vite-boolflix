@@ -27,6 +27,31 @@ export default{
         }
         console.log("response.data.results: ", response.data.results);
         console.log("Dentro store.movie[0]: ", store.movies[0]);
+      });
+      axios.get('https://api.themoviedb.org/3/search/tv?', {
+        params:{
+          api_key: '8c5d2929491cc6bc1823b19280c48648',
+          query: query
+        }
+      })
+      .then((response)=>{
+        // this.store.movies.push(response.data.results);
+        
+        const newArrayOfObj = response.data.results.map(({
+        name: title,
+        original_name: original_title,
+          ...rest
+          }) => ({
+            title,
+            original_title,
+          ...rest
+          }));
+        console.log(newArrayOfObj)
+        // for(let i= 0; i<response.data.results.length; i++){
+        //   this.store.movies.push(response.data.results[i]);
+        // }
+        console.log("response.data.results: ", response.data.results);
+        // console.log("Dentro store.movie[0]: ", store.movies[0]);
       })
     }
     
