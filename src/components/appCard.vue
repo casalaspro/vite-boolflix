@@ -3,6 +3,7 @@ export default{
   data(){
     return{
       isFlag: true,
+      posterDimension: "w154",
     }
   },
   methods:{
@@ -30,7 +31,8 @@ export default{
     movieTitle: String,
     movieOriginalTitle: String,
     movieLanguage: String,
-    movieVote: Number
+    movieVote: Number,
+    moviePoster: String
   }
 
 }
@@ -46,6 +48,7 @@ export default{
       <img v-if="isFlag" class="flag" :src="getImgSource(movieLanguage)" alt="">
       <h3 v-else>{{ movieLanguage }}</h3>
       <h4>{{ Math.floor(movieVote) }}</h4>
+      <img :src="getPosterSource(posterDimension, moviePoster)" alt="" class="poster">
       
     </div>
   </div>

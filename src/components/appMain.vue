@@ -33,6 +33,7 @@ export default{
             :movieOriginalTitle="movie.original_title"
             :movieLanguage="movie.original_language"
             :movieVote="movie.vote_average"
+            :moviePoster="movie.poster_path"
           />
         </div>
       </div>
@@ -48,6 +49,7 @@ export default{
             :movieOriginalTitle="movie.original_title"
             :movieLanguage="movie.original_language"
             :movieVote="movie.vote_average"
+            :moviePoster="movie.poster_path"
           />
         </div>
       </div>
