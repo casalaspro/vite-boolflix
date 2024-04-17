@@ -4,14 +4,15 @@ export default{
     return{
       isFlag: true,
       posterDimension: "w154",
-      starsArray: []
     }
   },
   methods:{
+
     getPosterSource(dimensionsString, queryString){
       const srcBase = "https://image.tmdb.org/t/p/";
       return new URL(srcBase + dimensionsString + queryString, import.meta.url).href;
     },
+
     getImgSource(string){
       const src = "../assets/";
       const englandFlag = "gbr.svg";
@@ -26,14 +27,15 @@ export default{
     }
   },
   mounted(){
-    console.log("Test Immagine: ", this.getPosterSource("w92", "/vCTk3LfY2Ux7IngTTUSxejLcSJW.jpg"));
   },
   props:{
     movieTitle: String,
     movieOriginalTitle: String,
     movieLanguage: String,
     movieVote: Number,
-    moviePoster: String
+    moviePoster: String,
+    fullStars: Number,
+    halfStars: Number
   }
 
 }
@@ -50,7 +52,8 @@ export default{
       <h3 v-else>{{ movieLanguage }}</h3>
       <h4>{{ Math.floor(movieVote) }}</h4>
       <img :src="getPosterSource(posterDimension, moviePoster)" alt="" class="poster">
-      <font-awesome-icon :icon="['far', 'star']" />
+      <font-awesome-icon v-for="n in fullStars" v-if="fullStars > 0" :icon="['fas', 'star']" />
+      <font-awesome-icon v-for="n in halfStars" v-if="halfStars > 0" :icon="['far', 'star']" />
       
     </div>
   </div>

@@ -7,7 +7,7 @@ export default{
   data(){
     return{
       store : store,
-
+      
     }
   },
   components:{
@@ -16,6 +16,14 @@ export default{
   created(){
     // console.log("Dal'appMain ",  dbMovies);
   },
+  methods:{
+
+    getStars(voteOn10){
+      const voteOn5 = Math.floor(voteOn10 / 2);
+      return voteOn5;
+    }
+
+  }
 }
 
 </script>
@@ -34,6 +42,8 @@ export default{
             :movieLanguage="movie.original_language"
             :movieVote="movie.vote_average"
             :moviePoster="movie.poster_path"
+            :fullStars="getStars(movie.vote_average)"
+            :halfStars="5-getStars(movie.vote_average)"
           />
         </div>
       </div>
@@ -50,6 +60,8 @@ export default{
             :movieLanguage="movie.original_language"
             :movieVote="movie.vote_average"
             :moviePoster="movie.poster_path"
+            :fullStars="getStars(movie.vote_average)"
+            :halfStars="5-getStars(movie.vote_average)"
           />
         </div>
       </div>
