@@ -77,5 +77,14 @@ export default{
 </template>
 
 <style scoped>
-
+  .search-input{
+    border: 1px solid white;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    &:focus-visible{
+      outline: none;
+      padding: 3px 5px;
+    }
+  }
 </style>

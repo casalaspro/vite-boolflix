@@ -19,7 +19,7 @@
 <nav>
   <div class="container">
     <div class="row navbar align-center space-between">
-      <div class="logo">BOOLZAPP</div>
+      <div class="logo"><img src="../assets/boolflix_logo.svg" alt=""></div>
       <ul class="menu">
         <li><a href="#">Home</a></li>
         <li><a href="#">Serie TV</a></li>
@@ -50,6 +50,9 @@
         font-weight: 900;
         font-size: 30px;
         letter-spacing: 3px;
+        img{
+          width: 95px;
+        }
       }
       
       .menu{

@@ -75,6 +75,17 @@ export default{
 <style lang="scss" scope>
 .search-results{
   padding-top: 71px;
+  h1::after{
+      content: '';
+      display: block;
+      background: rgb(255,255,255);
+      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(217,217,217,1) 51%, rgba(0,0,0,0) 100%);
+
+      width: 100%;
+      height: 2px;
+      margin-bottom: 3px;
+    }
+  
   .row{
     margin-right: -5px;
     margin-left: -5px;
