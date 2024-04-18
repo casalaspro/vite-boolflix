@@ -1,22 +1,42 @@
 <script>
 import AppCard from './appCard.vue';
-import {store} from '../store'
+import {store} from '../store';
+import AppGenres from './appGenres.vue';
+import axios from 'axios'
 
 
 export default{
   data(){
     return{
       store : store,
+      genres : store.genres
       
     }
   },
   components:{
-    AppCard
+    AppCard,
+    AppGenres
   },
   created(){
     // console.log("Dal'appMain ",  dbMovies);
+    this.fetchGenres();
   },
   methods:{
+    fetchGenres(){
+      // this.store.genres = [];
+      axios.get('https://api.themoviedb.org/3/genre/movie/list?', {
+        params:{
+          api_key: '8c5d2929491cc6bc1823b19280c48648',
+          language: 'en'
+        }
+      })
+      .then((response)=>{
+        // this.store.movies.push(response.data.results);
+        this.store.genres = response.data.genres;
+        console.log("Genres: ", this.store.genres);
+        // console.log("Genres fetch: ", response);
+      });
+    },
 
     getStars(voteOn10){
       const voteOn5 = Math.floor(voteOn10 / 2);
@@ -34,6 +54,9 @@ export default{
     <div class="movies">
       <div class="container">
         <h1 class="movie-title">Movies</h1>
+        <AppGenres 
+        :genres="store.genres"
+        />
         <div class="row">
           <AppCard 
             v-for="movie in store.movies"

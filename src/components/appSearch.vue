@@ -69,14 +69,19 @@ export default{
 
 <template>
   <div class="search-wrap">
-    <input class="search-input" v-model="searchValue" type="text">
-    <button @click="fetchMovies(searchValue)" class="search-button">Search</button>
+    <input v-on:keyup.enter="fetchMovies(searchValue)" class="search-input" v-model="searchValue" type="text">
+    <font-awesome-icon @click="fetchMovies(searchValue)" class="magnifying-glass" :icon="['fas', 'magnifying-glass']" />
+    <!-- <button @click="fetchMovies(searchValue)" class="search-button">Search</button> -->
     <!-- <p v-if="movieDatabase.length !== 0">{{ movieDatabase }}</p> -->
   </div>
   
 </template>
 
 <style scoped>
+.search-wrap{
+  display: flex;
+  align-items: center;
+  position: relative;
   .search-input{
     border: 1px solid white;
     height: 30px;
@@ -86,5 +91,14 @@ export default{
       outline: none;
       padding: 3px 5px;
     }
+    svg.svg-inline--fa.fa-magnifying-glass.magnifying-glass{
+      font-size: 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: blue;
+      left: 16px;
+    }
   }
+}
 </style>
