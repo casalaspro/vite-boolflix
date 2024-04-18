@@ -87,18 +87,12 @@ export default{
     height: 30px;
     background-color: rgba(0, 0, 0, 0);
     color: white;
+    margin-right: 20px;
     &:focus-visible{
       outline: none;
       padding: 3px 5px;
     }
-    svg.svg-inline--fa.fa-magnifying-glass.magnifying-glass{
-      font-size: 50px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: blue;
-      left: 16px;
-    }
   }
 }
+
 </style>
