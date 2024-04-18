@@ -44,6 +44,7 @@ export default{
             :moviePoster="movie.poster_path"
             :fullStars="getStars(movie.vote_average)"
             :halfStars="5-getStars(movie.vote_average)"
+            :overview="movie.overview"
           />
         </div>
       </div>
@@ -60,6 +61,9 @@ export default{
             :movieLanguage="movie.original_language"
             :movieVote="movie.vote_average"
             :moviePoster="movie.poster_path"
+            :fullStars="getStars(movie.vote_average)"
+            :halfStars="5-getStars(movie.vote_average)"
+            :overview="movie.overview"
           />
         </div>
       </div>

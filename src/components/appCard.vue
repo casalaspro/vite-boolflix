@@ -35,7 +35,8 @@ export default{
     movieVote: Number,
     moviePoster: String,
     fullStars: Number,
-    halfStars: Number
+    halfStars: Number,
+    overview: String
   }
 
 }
@@ -60,6 +61,7 @@ export default{
           <font-awesome-icon v-for="n in fullStars" v-if="fullStars > 0" :icon="['fas', 'star']" />
           <font-awesome-icon v-for="n in halfStars" v-if="halfStars > 0" :icon="['far', 'star']" />
         </p>
+        <p><b>Overview: </b>{{ overview }}</p>
       
       </div>
     </div>
