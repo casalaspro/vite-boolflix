@@ -88,6 +88,7 @@ export default{
       padding: 10px 10px;
       opacity: 0;
       transition: opacity 0.7s;
+      overflow: scroll;
       &:hover{
         opacity: 1;
       }
