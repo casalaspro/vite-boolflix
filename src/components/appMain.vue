@@ -60,8 +60,6 @@ export default{
             :movieLanguage="movie.original_language"
             :movieVote="movie.vote_average"
             :moviePoster="movie.poster_path"
-            :fullStars="getStars(movie.vote_average)"
-            :halfStars="5-getStars(movie.vote_average)"
           />
         </div>
       </div>
@@ -72,9 +70,10 @@ export default{
 
 <style lang="scss" scope>
 .search-results{
+  padding-top: 71px;
   .row{
-    margin-right: -10px;
-    margin-left: -10px;
+    margin-right: -5px;
+    margin-left: -5px;
   }
 }
 </style>

@@ -3,7 +3,7 @@ export default{
   data(){
     return{
       isFlag: true,
-      posterDimension: "w154",
+      posterDimension: "w342",
     }
   },
   methods:{
@@ -44,17 +44,24 @@ export default{
 <template>
   <div class="col-20">
     <div class="card">
-
-      <h1>{{ movieTitle }}</h1>
-      <h2>{{ movieOriginalTitle }}</h2>
-      <!-- <h3>{{ movieLanguage }}</h3> -->
-      <img v-if="isFlag" class="flag" :src="getImgSource(movieLanguage)" alt="">
-      <h3 v-else>{{ movieLanguage }}</h3>
-      <h4>{{ Math.floor(movieVote) }}</h4>
       <img :src="getPosterSource(posterDimension, moviePoster)" alt="" class="poster">
-      <font-awesome-icon v-for="n in fullStars" v-if="fullStars > 0" :icon="['fas', 'star']" />
-      <font-awesome-icon v-for="n in halfStars" v-if="halfStars > 0" :icon="['far', 'star']" />
+      <div class="card-body">
+
+        <p><b>Titolo: </b>{{ movieTitle }}</p>
+        <p><b>Titolo originale: </b>{{ movieOriginalTitle }}</p>
+        <!-- <h3>{{ movieLanguage }}</h3> -->
+        <div  v-if="isFlag" class="language">
+          <p class=""><b>Lingua: </b></p><img  class="flag" :src="getImgSource(movieLanguage)" alt="">
+        </div>
+        <div v-else class="language">
+          <p><b>Lingua: </b>{{ movieLanguage }}</p>
+        </div>
+        <p><b>Voto: </b>
+          <font-awesome-icon v-for="n in fullStars" v-if="fullStars > 0" :icon="['fas', 'star']" />
+          <font-awesome-icon v-for="n in halfStars" v-if="halfStars > 0" :icon="['far', 'star']" />
+        </p>
       
+      </div>
     </div>
   </div>
 
@@ -65,29 +72,47 @@ export default{
 <style scoped>
 .col-20{
   /* border: 1px solid rgba(255, 255, 255, 0.32); */
-  padding: 10px;
+  padding: 5px;
+
   .card{
-    h1{
-      font-size: 17px;
-    }
-    h2{
-      font-style: italic;
-      font-size: 15px;
-    }
-    img{
-      &.flag{
-        width: 31px;
+    position: relative;
+    .card-body{
+      position: absolute;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.879);
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      padding: 10px 10px;
+      opacity: 0;
+      transition: opacity 0.7s;
+      &:hover{
+        opacity: 1;
       }
     }
-    border: 1px solid rgba(255, 255, 255, 0.32);
-    height: 100%;
-    /* aspect-ratio: 1/1.5; */
-    padding: 10px;
+    .language{
+      display: flex;
+      align-items: center;
+    }
     
+    img{
+      /* border: 1px solid rgba(255, 255, 255, 0.32); */
+      height: 100%;
+      position: relative;
+       
+      &.flag{
+        width: 31px;
+        margin-left: 4px;
+      }
+        
+      &.poster{
+        width: 100%;
+      }
 
       & > *{
         margin-bottom: 20px;
       }
+    }
   }
 }
 </style>
